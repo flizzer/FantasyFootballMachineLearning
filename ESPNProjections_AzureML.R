@@ -15,16 +15,14 @@ library("plyr")
 library("data.table")
 
 #Functions
-source(paste(getwd(),"/Documents/Development/FantasyFootballMachineLearning/Functions/Functions.R", sep=""))
-source(paste(getwd(),"/Documents/Development/FantasyFootballMachineLearning/Functions/League Settings.R", sep=""))
+source(paste(getwd(),"/src/FantasyFootballMachineLearning/Functions/Functions.R", sep=""))
+source(paste(getwd(),"/src/FantasyFootballMachineLearning/Functions/League Settings.R", sep=""))
 
 #Projection Info
 suffix <- "espn"
 
 #Download fantasy football projections from ESPN.com
-#Current season scoring:  http://games.espn.com/ffl/leaders?leagueId=1612374&teamId=2&seasonTotals=true&seasonId=2016&scoringPeriodId=&slotCategoryId=0&startIndex=0
-#espn_base_url <- paste0("http://games.espn.go.com/ffl/tools/projections?&seasonTotals=true&seasonId=", season, "&scoringPeriodId=")
-espn_base_url <- paste0("http://games.espn.com/ffl/leaders?leagueId=1612374&teamId=2&seasonTotals=true&scoringPeriodId=&slotCategoryId=0&startIndex=0&seasonId=", season)
+espn_base_url <- paste0("http://games.espn.go.com/ffl/tools/projections?&seasonTotals=true&seasonId=", season, "&scoringPeriodId=")
 espn_pos <- list(QB=0, RB=2, WR=4, TE=6, K=17, DST=16)
 espn_pages <- c("0","40","80")
 espn_urls <- paste0(espn_base_url, "&slotCategoryId=", rep(espn_pos, each=length(espn_pages)), "&startIndex=", espn_pages)
@@ -103,31 +101,6 @@ projections_espn[,name := nameMerge(projections_espn$name_espn)]
 duplicateCases <- projections_espn[duplicated(name)]$name
 projections_espn[which(name %in% duplicateCases),]
 
-#Same name, different player
-#projections_espn <- projections_espn[-which(name == "ALEXSMITH" & team_espn == "CIN"),]
-#projections_espn <- projections_espn[-which(name == "RYANGRIFFIN" & team_espn == "NO"),]
-#projections_espn <- projections_espn[-which(name == "ZACHMILLER" & team_espn == "CHI"),]
-
-#Same player, different position
-#dropNames <- c("DEXTERMCCLUSTER")
-#dropVariables <- c("pos")
-#dropLabels <- c("WR")
-
-#projections_espn2 <- setDT(ddply(projections_espn, .(name), numcolwise(mean), na.rm=TRUE))
-
-#for(i in 1:length(dropNames)){
-#  if(dim(projections_espn[-which(name == dropNames[i] & projections_espn[,dropVariables[i], with=FALSE] == dropLabels[i]),])[1] > 0){
-#    projections_espn <- projections_espn[-which(name == dropNames[i] & projections_espn[,dropVariables[i], with=FALSE] == dropLabels[i]),]
-#  }
-#}
-
-#setkeyv(projections_espn2, cols="name")
-#setkeyv(projections_espn, cols="name")
-
-#projections_espn <- merge(projections_espn2, projections_espn[,c("name","name_espn","player","pos","team_espn"), with=FALSE], by="name")
-
-#Rename players
-
 #Calculate Overall Rank
 projections_espn <- projections_espn[order(-points)][,overallRank := 1:.N]
 
@@ -143,18 +116,19 @@ keepVars <- allVars[allVars %in% names(projections_espn)]
 projections_espn <- projections_espn[,keepVars, with=FALSE]
 
 #Order players by overall rank
-#projections_espn <- projections_espn[order(projections_espn$overallRank),]
-projections_espn <- projections_espn[order(pos),]
-
+projections_espn <- projections_espn[order(projections_espn$overallRank),]
+  
 #Density Plot
 #ggplot(projections_espn, aes(x=points)) + geom_density(fill="blue", alpha=.3) + xlab("Player's Projected Points") + ggtitle("Density Plot of ESPN Projected Points")
-#ggsave(paste(getwd(),"/Documents/Development/FantasyFootballMachineLearning/Figures/ESPN projections.jpg", sep=""), width=10, height=10)
+#ggsave(paste(getwd(),"/src/FantasyFootballMachineLearning/Figures/ESPN projections.jpg", sep=""), width=10, height=10)
 #dev.off()
 
 #Save file
-save(projections_espn, file = paste(getwd(), "/Documents/Development/FantasyFootballMachineLearning/Data/ESPN-Projections.RData", sep=""))
-write.csv(projections_espn, file=paste(getwd(), "/Documents/Development/FantasyFootballMachineLearning/Data/ESPN-Projections.csv", sep=""), row.names=FALSE)
+save(projections_espn, file = paste(getwd(), "/src/FantasyFootballMachineLearning/Data/ESPN-Projections.RData", sep=""))
 
-save(projections_espn, file = paste(getwd(), "/Documents/Development/FantasyFootballMachineLearning/Data/Historical Projections/ESPN-Projections-", season, ".RData", sep=""))
-write.csv(projections_espn, file=paste(getwd(), "/Documents/Development/FantasyFootballMachineLearning/Data/Historical Projections/ESPN-Projections-", season, ".csv", sep=""), row.names=FALSE)
+# You'll see this output in the R Device port.
+# It'll have your stdout, stderr and PNG graphics device(s).
+#plot(projections_espn);
 
+# Select data.frame to be sent to the output Dataset port
+maml.mapOutputPort("projections_espn");
