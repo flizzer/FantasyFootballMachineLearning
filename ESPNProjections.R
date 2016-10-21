@@ -13,6 +13,8 @@ library("stringr")
 library("ggplot2")
 library("plyr")
 library("data.table")
+library("httr")
+library("RSelenium")
 
 #Functions
 source(paste(getwd(),"/Documents/Development/FantasyFootballMachineLearning/Functions/Functions.R", sep=""))
@@ -22,12 +24,42 @@ source(paste(getwd(),"/Documents/Development/FantasyFootballMachineLearning/Func
 suffix <- "espn"
 
 #Download fantasy football projections from ESPN.com
-#Current season scoring:  http://games.espn.com/ffl/leaders?leagueId=1612374&teamId=2&seasonTotals=true&seasonId=2016&scoringPeriodId=&slotCategoryId=0&startIndex=0
 #espn_base_url <- paste0("http://games.espn.go.com/ffl/tools/projections?&seasonTotals=true&seasonId=", season, "&scoringPeriodId=")
-espn_base_url <- paste0("http://games.espn.com/ffl/leaders?leagueId=1612374&teamId=2&seasonTotals=true&scoringPeriodId=&slotCategoryId=0&startIndex=0&seasonId=", season)
+#espn_base_url <- paste0("http://games.espn.com/ffl/leaders?leagueId=1612374&teamId=2&seasonTotals=true&scoringPeriodId=&slotCategoryId=0&startIndex=0&seasonId=", season)
+#espn_base_url <- "http://games.espn.com/ffl/leaders?teamId=2&seasonTotals=true&leagueId=1612374&seasonId=2016"
+espn_base_url <- "http://games.espn.com/ffl/leaders?leagueId=1612374&teamId=2&scoringPeriodId=6"
 espn_pos <- list(QB=0, RB=2, WR=4, TE=6, K=17, DST=16)
 espn_pages <- c("0","40","80")
 espn_urls <- paste0(espn_base_url, "&slotCategoryId=", rep(espn_pos, each=length(espn_pages)), "&startIndex=", espn_pages)
+
+#Login
+startServer()
+#browser <- remoteDriver()
+#browser.getStatus()
+Sys.sleep(10)
+browser$open()
+loginUrl <- "http://games.espn.com/ffl/signin?redir=http%3A%2F%2Fgames.espn.com%2Fffl%2Fleaders%3FteamId%3D-2147483648%26leagueId%3D1612374%26scoringPeriodId%3D6"
+browser$navigate(loginUrl)
+usernameField <- browser$findElement(using="css selector","field field-username-email")
+usernameField$sendKeysToElement("briandavis1977@gmail.com")
+passwordField <- browser$findElement(using="css selector","field field-password")
+passwordField$sendKeysToElement("0pt1musPr1m3!")
+loginButton <- browser$findElement("btn btn-primary ng-binding")
+loginButton$clickElement()
+
+
+
+
+#handle <- handle("http://games.espn.com")
+#path <- "/ffl/signin?redir=http%3A%2F%2Fgames.espn.com%2Fffl%2Fleaders%3FteamId%3D-2147483648%26leagueId%3D1612374%26scoringPeriodId%3D6"
+
+#login <- list(
+#  vm.username = "briandavis1977@gmail.com",
+#  vm.password = "0pt1musPr1m3"
+#  )
+
+#response <- POST(handle=handle, path=path, body=login)
+
 
 #Scrape
 espn <- lapply(espn_urls, function(x){data.table(readHTMLTable(x, as.data.frame=TRUE, stringsAsFactors=FALSE)$playertable_0)})
