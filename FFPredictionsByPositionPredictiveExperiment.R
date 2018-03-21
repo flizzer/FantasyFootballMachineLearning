@@ -1,4 +1,4 @@
-## Yet another test -- Set the workspace id
+## Set the workspace id
 
 wsid = "paste your workspace id here within the quotation marks"
 
