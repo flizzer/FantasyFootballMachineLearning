@@ -3806,13 +3806,13 @@
       "projectName": "model",
       "projectPath": "/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/model.csproj",
       "packagesPath": "/Users/bdavis/.nuget/packages/",
-      "outputPath": "/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/",
+      "outputPath": "/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/bdavis/.nuget/NuGet/NuGet.Config"
+        "/Users/bdavis/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -3836,11 +3836,12 @@
         "dependencies": {
           "Microsoft.ML": {
             "target": "Package",
-            "version": "[0.4.0, )"
+            "version": "0.4.0"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0",
             "autoReferenced": true
           }
         },
