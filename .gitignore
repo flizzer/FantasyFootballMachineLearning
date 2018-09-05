@@ -3,3 +3,8 @@
 /.vs/FantasyFootballMachineLearning/v15/.suo
 mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/*.cache
 FantasyFootballMachineLearning-1
+mlnetFantasyFootballProjections/model/bin/Debug/netcoreapp2.0/model.dll
+mlnetFantasyFootballProjections/model/bin/Debug/netcoreapp2.0/model.pdb
+mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.dll
+mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.pdb
+mlnetFantasyFootballProjections/.vs/*

@@ -67,29 +67,20 @@ public class QBFantasyGame
     public int OffensiveSnapNumber;
 
     [Column("21")]
-    public float OffensiveSnapPercentage {
-        get { return int.Parse(_OffensiveSnapPercentage.Trim('%')) / 100f; }
-    }
-    private string _OffensiveSnapPercentage;
+    public string OffensiveSnapPercentage; 
 
     [Column("22")]
     public int DefensiveSnapNumber;
 
     [Column("23")]
-    public float DefensiveSnapPercentage {
-
-        get { return int.Parse(_DefensiveSnapPercentage.Trim('%')) / 100f; }
-    }
-    private string _DefensiveSnapPercentage;
+    public string DefensiveSnapPercentage; 
 
     [Column("24")]
     public int SpecialTeamsSnapNumber;
 
     [Column("25")]
-    public float SpecialTeamsSnapPercentage {
+    public string SpecialTeamsSnapPercentage;
 
-        get { return int.Parse(_SpecialTeamsSnapPercentage.Trim('%')) / 100f; }
-    }
-    private string _SpecialTeamsSnapPercentage;
-
+    [Column("26")]
+    public float TotalFantasyPoints;
 }
