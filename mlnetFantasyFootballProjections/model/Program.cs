@@ -26,10 +26,10 @@ namespace model
             var pipeline = new LearningPipeline();
             pipeline.Add(new TextLoader(_trainingDataPath)
                 .CreateFrom<QBFantasyGame>(useHeader:true, separator:','));
-            pipeline.Add(new ColumnCopier("TotalFantasyPoints", "Label"));
+            pipeline.Add(new ColumnCopier(("TotalFantasyPoints", "Label")));
             pipeline.Add(new CategoricalOneHotVectorizer("Team",
                                                         "Opponent",
-                                                        "Results",
+                                                        "Result",
                                                         "Position",
                                                         "OffensiveSnapPercentage",
                                                         "DefensiveSnapPercentage",
