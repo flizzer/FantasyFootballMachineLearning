@@ -11,8 +11,8 @@ namespace model
 {
     class Program
     {
-        static readonly string _trainingDataPath = "../../QBFantasyGameDataScrubbed.csv";
-        static readonly string _testDataPath = "../../QBFantasyGameDataTraining.csv";
+        static readonly string _trainingDataPath = "../../QBFantasyGameDataTraining.csv";
+        static readonly string _testDataPath = "../../QBFantasyGameDataTesting.csv";
         static readonly string _modelDataPath = "../../Model.zip";
 
         static void Main(string[] args)
@@ -36,7 +36,7 @@ namespace model
                                                         "SpecialTeamsSnapPercentage"));
             pipeline.Add(new ColumnConcatenator("Features",
                                                "GameNumber",
-                                               "Date",
+                                               //"Date",
                                                "Team",
                                                "Opponent",
                                                "Result",

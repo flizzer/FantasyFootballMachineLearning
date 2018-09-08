@@ -1,11 +1,11 @@
-/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.csprojAssemblyReference.cache
-/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.csproj.CoreCompileInputs.cache
-/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.AssemblyInfoInputs.cache
-/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.AssemblyInfo.cs
 /Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/bin/Debug/netcoreapp2.0/model.deps.json
 /Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/bin/Debug/netcoreapp2.0/model.runtimeconfig.json
 /Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/bin/Debug/netcoreapp2.0/model.runtimeconfig.dev.json
 /Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/bin/Debug/netcoreapp2.0/model.dll
 /Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/bin/Debug/netcoreapp2.0/model.pdb
+/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.csproj.CoreCompileInputs.cache
+/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.AssemblyInfoInputs.cache
+/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.AssemblyInfo.cs
 /Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.dll
 /Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.pdb
+/Users/bdavis/Documents/Development/FantasyFootballMachineLearning/mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.csprojAssemblyReference.cache
