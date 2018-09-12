@@ -77,10 +77,10 @@ public class QBFantasyGame
 
     [Column("24")]
     public float SpecialTeamsSnapNumber;
-
+        
     [Column("25")]
     public string SpecialTeamsSnapPercentage;
 
     [Column("26")]
-    public float TotalFantasyPoints;
+    public float FantPt;
 }
