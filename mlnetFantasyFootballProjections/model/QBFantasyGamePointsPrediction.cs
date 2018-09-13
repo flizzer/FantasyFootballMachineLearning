@@ -1,7 +1,11 @@
 using Microsoft.ML.Runtime.Api;
 
-public class QBFantasyGamePointsPrediction 
+namespace model
 {
-    [ColumnName("Score")]
-    public float FantPt;
+    public class QBFantasyGamePointsPrediction
+    {
+        [ColumnName("Score")]
+        public float FantPt;
+    }
 }
+
