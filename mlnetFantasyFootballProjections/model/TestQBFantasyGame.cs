@@ -1,4 +1,6 @@
-﻿namespace model
+﻿using System;
+
+namespace model
 {
     public class TestQBFantasyGame
     {
@@ -8,6 +10,7 @@
         public static QBFantasyGame QBFantasyGame1 = new QBFantasyGame
         {
             GameNumber = 1f,
+            //Date = DateTime.Parse("2012-09-09"),
             Team = "ATL",
             Opponent = "KAN",
             Result = "W 40-24",
