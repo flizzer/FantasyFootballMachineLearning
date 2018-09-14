@@ -32,7 +32,8 @@ namespace model
             pipeline.Add(new TextLoader(_trainingDataPath)
                 .CreateFrom<QBFantasyGame>(useHeader:true, separator:','));
             pipeline.Add(new ColumnCopier(("FantPt", "Label")));
-            pipeline.Add(new CategoricalOneHotVectorizer("Team",
+            pipeline.Add(new CategoricalOneHotVectorizer("GameNumber",
+                                                        "Team",
                                                         "Opponent",
                                                         "Result",
                                                         "Position",

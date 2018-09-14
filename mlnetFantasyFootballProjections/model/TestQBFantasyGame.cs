@@ -9,7 +9,7 @@ namespace model
         //,0,0.0%,32.46
         public static QBFantasyGame QBFantasyGame1 = new QBFantasyGame
         {
-            GameNumber = 1f,
+            GameNumber = "1",
             //Date = DateTime.Parse("2012-09-09"),
             Team = "ATL",
             Opponent = "KAN",

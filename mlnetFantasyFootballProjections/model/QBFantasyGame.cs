@@ -6,7 +6,7 @@ namespace model
     public class QBFantasyGame
     {
         [Column("0")]
-        public float GameNumber;
+        public string GameNumber;
 
         //[Column("1")]
         //public DateTime Date;
