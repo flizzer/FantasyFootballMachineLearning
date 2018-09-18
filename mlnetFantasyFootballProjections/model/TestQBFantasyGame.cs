@@ -38,5 +38,69 @@ namespace model
             FantPt = 0
 
         };
+
+        public static QBFantasyGame BradyVsJax = new QBFantasyGame
+        {
+            GameNumber = "2",
+            //Date = DateTime.Parse("2012-09-09"),
+            Team = "NWE",
+            Opponent = "JAX",
+            Result = "L 20-31",
+            Position = "QB",
+            Inside20PassCompletions = 2f,
+            Inside20PassAttempts = 4f,
+            Inside20PassYards = 7f,
+            Inside20PassTouchdowns = 1f,
+            Inside20RushAttempts = 0f,
+            Inside20RushYards = 0f,
+            Inside20RushTouchdowns = 0f,
+            Inside10PassCompletions = 1f,
+            Inside10PassAttempts = 1f,
+            Inside10PassYards = 0f,
+            Inside10PassTouchdowns = 1f,
+            Inside10RushAttempts = 0f,
+            Inside10RushYards = 0f,
+            Inside10RushTouchdowns = 0f,
+            OffensiveSnapNumber = 61f,
+            OffensiveSnapPercentage = "100.0%",
+            DefensiveSnapNumber = 0f,
+            DefensiveSnapPercentage = "0.0%",
+            SpecialTeamsSnapNumber = 0f,
+            SpecialTeamsSnapPercentage = "0.0%",
+            FantPt = 0
+
+        };
+
+        public static QBFantasyGame RyanVsPanthers = new QBFantasyGame
+        {
+            GameNumber = "2",
+            //Date = DateTime.Parse("2012-09-09"),
+            Team = "ATL",
+            Opponent = "CAR",
+            Result = "W 31-24",
+            Position = "QB",
+            Inside20PassCompletions = 3f,
+            Inside20PassAttempts = 3f,
+            Inside20PassYards = 27f,
+            Inside20PassTouchdowns = 2f,
+            Inside20RushAttempts = 2f,
+            Inside20RushYards = 9f,
+            Inside20RushTouchdowns = 2f,
+            Inside10PassCompletions = 1f,
+            Inside10PassAttempts = 1f,
+            Inside10PassYards = 0f,
+            Inside10PassTouchdowns = 1f,
+            Inside10RushAttempts = 2f,
+            Inside10RushYards = 9f,
+            Inside10RushTouchdowns = 2f,
+            OffensiveSnapNumber = 62f,
+            OffensiveSnapPercentage = "98.4%",
+            DefensiveSnapNumber = 0f,
+            DefensiveSnapPercentage = "0.0%",
+            SpecialTeamsSnapNumber = 0f,
+            SpecialTeamsSnapPercentage = "0.0%",
+            FantPt = 0
+
+        };
     }
 }

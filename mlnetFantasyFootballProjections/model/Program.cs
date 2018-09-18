@@ -18,9 +18,9 @@ namespace model
         static void Main(string[] args)
         {
             PredictionModel<QBFantasyGame, QBFantasyGamePointsPrediction> model =  Train();
-            var prediction = model.Predict(TestQBFantasyGame.QBFantasyGame1);
+            var prediction = model.Predict(TestQBFantasyGame.RyanVsPanthers);
             Console.WriteLine($"Predicted FantPt: {prediction.FantPt:0.####}" +
-                              ", actual FantPt: 32.46");
+                              ", actual FantPt: 39.52");
             Evaluate(model);
             Console.WriteLine("Press any key to exit..");
             Console.ReadLine();
