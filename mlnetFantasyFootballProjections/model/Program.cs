@@ -1,11 +1,9 @@
 ﻿using System;
-using System.IO;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Models;
 using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms;
-using System.Threading.Tasks;
 
 namespace model
 {
