@@ -1,6 +1,6 @@
 using Microsoft.ML.Runtime.Api;
 
-namespace model
+namespace api
 {
     public class QBFantasyGame
     {
