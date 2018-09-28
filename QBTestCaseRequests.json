@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-09-27T02:45:05.917Z",
+	"__export_date": "2018-09-28T02:09:47.446Z",
 	"__export_source": "insomnia.desktop.app:v6.0.2",
 	"resources": [
 		{
@@ -52,9 +52,9 @@
 			],
 			"isPrivate": false,
 			"metaSortKey": -1538015115138,
-			"method": "GET",
-			"modified": 1538016047277,
-			"name": "/api/predict",
+			"method": "POST",
+			"modified": 1538100423715,
+			"name": "/api/predict QBFantasyGame1",
 			"parameters": [],
 			"parentId": "wrk_21a2e7a887ae48a0b0ff02b8271cd13f",
 			"settingDisableRenderRequestBody": false,
@@ -63,7 +63,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "",
+			"url": "http://localhost:5000/api/predict",
 			"_type": "request"
 		}
 	]
