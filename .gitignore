@@ -1,10 +1,9 @@
 
 .DS_Store
 /.vs/FantasyFootballMachineLearning/v15/.suo
-mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/*.cache
+mlnetFantasyFootballProjections/model/obj/*
 FantasyFootballMachineLearning-1
-mlnetFantasyFootballProjections/model/bin/Debug/netcoreapp2.0/model.dll
-mlnetFantasyFootballProjections/model/bin/Debug/netcoreapp2.0/model.pdb
-mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.dll
-mlnetFantasyFootballProjections/model/obj/Debug/netcoreapp2.0/model.pdb
+mlnetFantasyFootballProjections/model/bin/*
+mlnetFantasyFootballProjections/model/obj/*
 mlnetFantasyFootballProjections/.vs/*
+mlnetFantasyFootballProjections/api/obj/*
