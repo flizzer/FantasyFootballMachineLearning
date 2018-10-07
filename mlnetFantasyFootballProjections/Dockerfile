@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.0-sdk AS build
+FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /app
 
 COPY *.sln .
@@ -7,9 +7,9 @@ RUN dotnet restore
 
 COPY api/. ./api/
 WORKDIR /app/api
-RUN dotnet publis -c release -o out
+RUN dotnet publish -c release -o out
 
-FROM microsoft/aspnetcore:2.0 AS runtime
+FROM microsoft/aspnetcore:2.1.1 AS runtime
 WORKDIR /app
 COPY api/model.zip .
 COPY --from=build /app/api/out ./
