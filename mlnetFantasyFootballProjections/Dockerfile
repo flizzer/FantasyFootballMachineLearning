@@ -10,7 +10,7 @@ COPY api/. ./api/
 WORKDIR /app/api
 RUN dotnet publish -c release -o out
 
-FROM microsoft/aspnetcore:2.0 AS runtime
+FROM microsoft/dotnet:2.1-aspnetcore-runtime AS runtime
 WORKDIR /app
 COPY api/Model.zip .
 COPY --from=build /app/api/out ./

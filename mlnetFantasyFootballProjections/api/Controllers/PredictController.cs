@@ -13,7 +13,7 @@ namespace api.Controllers
         public string Post([FromBody] QBFantasyGame qBFantasyGame)
         {
             var model = PredictionModel.ReadAsync<QBFantasyGame
-                                       , QBFantasyGamePointsPrediction>("model.zip").Result;
+                                       , QBFantasyGamePointsPrediction>("Model.zip").Result;
             var prediction = model.Predict(qBFantasyGame);
             return prediction.FantPt.ToString();
         }
