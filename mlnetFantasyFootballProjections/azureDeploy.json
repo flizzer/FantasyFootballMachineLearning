@@ -5,7 +5,7 @@
     "parameters": {
       "containerGroupName": {
         "type": "string",
-        "defaultValue": "mlnetacicontainergroup",
+        "defaultValue": "mlnetfantasyfootballprojectionscontainergroup",
         "metadata": {
           "description": "Container Group name."
         }
